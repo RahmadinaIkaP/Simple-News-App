@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/mobile_navigation"
+    app:startDestination="@+id/splashScreenFragment">
+
+    <fragment
+        android:id="@+id/navigation_home"
+        android:name="id.ac.umn.tugasakhir_virtualinternship_rakaminacademy.ui.HomeFragment"
+        android:label="@string/title_home"
+        tools:layout="@layout/fragment_home" >
+        <action
+            android:id="@+id/action_navigation_home_to_detailBeritaFragment"
+            app:destination="@id/detailBeritaFragment" />
+    </fragment>
+    <fragment
+        android:id="@+id/detailBeritaFragment"
+        android:name="id.ac.umn.tugasakhir_virtualinternship_rakaminacademy.ui.DetailBeritaFragment"
+        android:label="fragment_detail_berita"
+        tools:layout="@layout/fragment_detail_berita">
+
+        <argument
+            android:name="articles"
+            app:argType="id.ac.umn.tugasakhir_virtualinternship_rakaminacademy.model.Article" />
+    </fragment>
+    <fragment
+        android:id="@+id/splashScreenFragment"
+        android:name="id.ac.umn.tugasakhir_virtualinternship_rakaminacademy.ui.SplashScreenFragment"
+        android:label="fragment_splash_screen"
+        tools:layout="@layout/fragment_splash_screen" >
+        <action
+            android:id="@+id/action_splashScreenFragment_to_navigation_home"
+            app:destination="@id/navigation_home"
+            app:popUpTo="@id/splashScreenFragment"
+            app:popUpToInclusive="true"/>
+    </fragment>
+
+</navigation>
